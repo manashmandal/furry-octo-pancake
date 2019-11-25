@@ -1,0 +1,49 @@
+openapi: 3.0.0
+info:
+  title: Sentiment Analysis
+  version: '1.0'
+servers:
+  - url: 'https://sentiment.bcc.gov.bd'
+paths:
+  /embeddings:
+    get:
+      summary: get_embeddings
+      tags: []
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                encodingType:
+                  type: string
+                tokenEmbeddings:
+                  type: boolean
+                dimension:
+                  type: integer
+                document:
+                  type: object
+                  required:
+                    - type
+                    - content
+                  properties:
+                    type:
+                      type: string
+                    content:
+                      type: string
+              required:
+                - encodingType
+                - tokenEmbeddings
+                - dimension
+                - document
+            examples:
+              example-1: {}
+              example-2: {}
+        description: ''
+      description: Get Embedding
+components:
+  schemas: {}
+  securitySchemes: {}
