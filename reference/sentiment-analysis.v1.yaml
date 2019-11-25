@@ -40,7 +40,15 @@ paths:
                 - dimension
                 - document
             examples:
-              example-1: {}
+              example-1:
+                value:
+                  document:
+                    type: PLAIN_TEXT
+                    content: Enjoy your vacation
+                  model: w2v
+                  dimension: 50
+                  tokenEmbeddings: true
+                  encodingType: UTF-8
               example-2: {}
         description: ''
       description: Get Embedding
